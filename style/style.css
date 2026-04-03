@@ -1,0 +1,106 @@
+html {
+    scroll-behavior: smooth;
+}
+
+.navbar.is-fixed-top {
+    border-radius: 20px;
+}
+
+.bouton:hover {
+    background-color: rgb(186, 186, 225);
+}
+
+#slider-content {
+    flex-grow: 1;
+    min-height: 180px;
+}
+
+.slide-image {
+    filter: blur(3px);
+    transition: filter 0.3s;
+}
+
+.slide-image:hover {
+    filter: blur(0);
+}
+
+.card-image video {
+  border-radius: 12px 12px 0 0;
+  width: 100%;
+  display: block;
+}
+
+#drawer {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 40%;
+    height: 100%;
+    z-index: 999;
+    transition: right 0.3s ease;
+    overflow-y: auto;
+}
+
+#overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 998;
+}
+
+.marquee-wrapper {
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent);
+}
+
+.marquee-track {
+    display: flex;
+    width: max-content;
+    animation: marquee 20s linear infinite;
+}
+
+@keyframes marquee {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(calc(var(--original-width, 9999px) * -1));
+    }
+}
+
+.skill-name {
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.skill-card:hover .skill-name {
+    opacity: 1;
+}
+
+.soft:hover {
+    transform: rotate(1deg);
+    transition: transform 0.3s ease;
+}
+
+.skill:hover {
+    transform: rotate(3deg);
+    transition: transform 0.3s ease-out;
+}
+
+.sticky-column {
+    position: sticky;
+    top: 5rem;
+    align-self: flex-start;
+}
+
+#projets,
+#competences,
+#contact {
+    scroll-margin-top: 6rem;
+}

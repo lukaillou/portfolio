@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/css/bulma.min.css">
+    <link rel="stylesheet" href="./style/css/css/all.css">
+    <link rel="stylesheet" href="./style/style.css">
+    <title>Portfolio - Luka Dombre</title>
+    <link rel="icon" href="./media/img/logo.svg">
+</head>
+
+<body class="has-navbar-fixed-top">
+    <header>
+        <nav class="navbar is-fixed-top has-background-light m-6" aria-label="Navigation principale">
+            <div class="navbar-brand">
+                <a class="navbar-item bouton" href="#" title="Retour à l'accueil">
+                    <img src="./media/img/logo.svg" alt="Logo de mon portfolio" style="max-height: 3rem;">
+                </a>
+            </div>
+            <div class="navbar-menu">
+                <div class="navbar-start">
+                    <a class="navbar-item bouton has-text-black" href="#projets" title="Voir mes projets">Mes
+                        projets</a>
+                    <a class="navbar-item bouton has-text-black" href="#competences" title="Voir mes compétences">Mes
+                        compétences</a>
+                    <a class="navbar-item bouton has-text-black" href="#contact"
+                        title="Voir les moyens de me contacter">Me contacter</a>
+                </div>
+                <div class="navbar-end">
+                    <div class="navbar-item">
+                        <a class="button is-rounded" href="./media/CV.pdf" target="_blank"
+                            title="Télécharger mon CV en PDF">
+                            <i class="fa-solid fa-download mr-2" aria-hidden="true"></i>
+                            <strong>Mon CV</strong>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="pt-6">
+        <section class="column is-three-fifths mx-auto">
+            <figure class="image mb-4 is-centered">
+                <img src="./media/img/jigsaw2.jpg" alt="Photo montage inspirée de In Rainbows de Radiohead">
+                <div class="is-overlay is-flex is-align-items-center is-justify-content-flex-start pl-5">
+                    <h1 class="box title is-size-1 has-text-white">Luka Dombre</h1>
+                </div>
+            </figure>
+
+            <div class="tags are-medium is-justify-content-space-evenly">
+                <span class="tag has-text-white">Graphisme</span>
+                <span class="tag has-text-white">Créativité</span>
+                <span class="tag has-text-white">Dessin</span>
+                <span class="tag has-text-white">Randonnée</span>
+            </div>
+        </section>
+
+        <div class="column is-one-third mx-auto box has-background-light has-text-centered m-6">
+            <h2 class="title has-text-black">Pour mieux me connaître</h2>
+        </div>
+
+        <section aria-label="À propos de moi" class="box has-background-light m-6">
+            <div class="columns">
+
+                <div class="column is-half has-text-black">
+                    <p class="mb-3">J'aime énormément dessiner ce qui m'entoure. J'ai commencé par de simples dessins
+                        d'enfants comme tout le monde. Depuis le collège, j'explore de nombreux médias artistiques.</p>
+                    <p class="mb-3">Actuellement, l'animation 2D et le pixel art sont les domaines qui m'attirent le
+                        plus. Je réalise des animations, des personnages ou des décors en pixel. C'est utile dans mes
+                        projets et même pour mon avenir !</p>
+                    <p class="mb-3">Mon rêve : mêler mes talents en dessin avec des domaines créatifs et visuels.
+                        Grâce aux outils numériques et à mes connaissances en développement, c'est possible !</p>
+                    <p>Moi, Luka Dombre, je suis étudiant en première année de BUT Métiers du Multimédia et de
+                        l'Internet à Lannion. Retenez bien ce nom !</p>
+                    <img class="image is-16by9 mt-5" src="./media/img/continued.png"
+                        alt="Flèche To Be Continued qui pointe vers la gauche">
+                </div>
+
+                <div class="column is-half">
+                    <div class="card mb-4">
+                        <div class="card-content">
+                            <div class="is-flex is-align-items-center is-justify-content-space-between">
+                                <button class="button is-ghost px-2" id="prevBtn" title="Passion précédente"
+                                    aria-label="Passion précédente">
+                                    <span class="icon is-medium"><i class="fas fa-chevron-left fa-lg"
+                                            aria-hidden="true"></i></span>
+                                </button>
+                                <div id="slider-content" class="has-text-centered">
+
+                                    <article class="slide">
+                                        <h3 class="title is-size-4">Art</h3>
+                                        <a href="#" id="open-dessins" title="Voir mes dessins">
+                                            <figure class="image is-128x128 mx-auto mt-3 slide-image">
+                                                <img src="./media/img/dessins/5.jpg" alt="Aperçu de mes dessins">
+                                            </figure>
+                                        </a>
+                                        <p class="mb-3">Voir mes dessins</p>
+                                    </article>
+
+                                    <div id="modal-dessins" class="modal">
+                                        <div class="modal-background"></div>
+                                        <div class="modal-card">
+                                            <header class="modal-card-head">
+                                                <h2 class="modal-card-title">Mes dessins</h2>
+                                                <button class="delete" id="close-modal-dessins"
+                                                    aria-label="Fermer"></button>
+                                            </header>
+                                            <section class="modal-card-body">
+                                                <div class="columns is-multiline">
+                                                    <div class="column is-one-third">
+                                                        <figure class="image"><img src="./media/img/dessins/1.jpg"
+                                                                alt="Dessin 1"></figure>
+                                                        <figure class="image"><img src="./media/img/dessins/2.jpg"
+                                                                alt="Dessin 2"></figure>
+                                                        <figure class="image"><img src="./media/img/dessins/4.jpg"
+                                                                alt="Dessin 4"></figure>
+                                                        <figure class="image"><img src="./media/img/dessins/7.jpg"
+                                                                alt="Dessin 7"></figure>
+                                                        <figure class="image"><img src="./media/img/dessins/10.jpg"
+                                                                alt="Dessin 10"></figure>
+                                                        <figure class="image"><img src="./media/img/dessins/13.jpg"
+                                                                alt="Dessin 13"></figure>
+                                                        <figure class="image"><img src="./media/img/dessins/16.jpg"
+                                                                alt="Dessin 16"></figure>
+                                                        <figure class="image"><img src="./media/img/dessins/19.jpg"
+                                                                alt="Dessin 19"></figure>
+                                                        <figure class="image"><img src="./media/img/dessins/22.jpg"
+                                                                alt="Dessin 22"></figure>
+                                                        <figure class="image"><img src="./media/img/dessins/25.jpg"
+                                                                alt="Dessin 25"></figure>
+                                                        <figure class="image"><img src="./media/img/dessins/32.jpg"
+                                                                alt="Dessin 32"></figure>
+                                                        <figure class="image"><img src="./media/img/dessins/35.jpg"
+                                                                alt="Dessin 35"></figure>
+                                                        <figure class="image"><img src="./media/img/dessins/38.jpg"
+                                                                alt="Dessin 38"></figure>
+                                                    </div>
+                                                    <div class="column is-one-third">
+                                                        <figure class="image"><img src="./media/img/dessins/3.jpg"
+                                                                alt="Dessin 3"></figure>
+                                                        <figure class="image"><img src="./media/img/dessins/5.jpg"
+                                                                alt="Dessin 5"></figure>
+                                                        <figure class="image"><img src="./media/img/dessins/8.jpg"
+                                                                alt="Dessin 8"></figure>
+                                                        <figure class="image"><img src="./media/img/dessins/11.jpg"
+                                                                alt="Dessin 11"></figure>
+                                                        <figure class="image"><img src="./media/img/dessins/14.jpg"
+                                                                alt="Dessin 14"></figure>
+                                                        <figure class="image"><img src="./media/img/dessins/17.jpg"
+                                                                alt="Dessin 17"></figure>
+                                                        <figure class="image"><img src="./media/img/dessins/20.jpg"
+                                                                alt="Dessin 20"></figure>
+                                                        <figure class="image"><img src="./media/img/dessins/23.jpg"
+                                                                alt="Dessin 23"></figure>
+                                                        <figure class="image"><img src="./media/img/dessins/26.jpg"
+                                                                alt="Dessin 26"></figure>
+                                                        <figure class="image"><img src="./media/img/dessins/29.jpg"
+                                                                alt="Dessin 29"></figure>
+                                                        <figure class="image"><img src="./media/img/dessins/31.jpg"
+                                                                alt="Dessin 31"></figure>
+                                                        <figure class="image"><img src="./media/img/dessins/33.jpg"
+                                                                alt="Dessin 33"></figure>
+                                                        <figure class="image"><img src="./media/img/dessins/36.jpg"
+                                                                alt="Dessin 36"></figure>
+                                                        <figure class="image"><img src="./media/img/dessins/39.jpg"
+                                                                alt="Dessin 39"></figure>
+                                                    </div>
+                                                    <div class="column is-one-third">
+                                                        <figure class="image"><img src="./media/img/dessins/6.jpg"
+                                                                alt="Dessin 6"></figure>
+                                                        <figure class="image"><img src="./media/img/dessins/9.jpg"
+                                                                alt="Dessin 9"></figure>
+                                                        <figure class="image"><img src="./media/img/dessins/12.jpg"
+                                                                alt="Dessin 12"></figure>
+                                                        <figure class="image"><img src="./media/img/dessins/15.jpg"
+                                                                alt="Dessin 15"></figure>
+                                                        <figure class="image"><img src="./media/img/dessins/18.jpg"
+                                                                alt="Dessin 18"></figure>
+                                                        <figure class="image"><img src="./media/img/dessins/21.jpg"
+                                                                alt="Dessin 21"></figure>
+                                                        <figure class="image"><img src="./media/img/dessins/24.jpg"
+                                                                alt="Dessin 24"></figure>
+                                                        <figure class="image"><img src="./media/img/dessins/27.jpg"
+                                                                alt="Dessin 27"></figure>
+                                                        <figure class="image"><img src="./media/img/dessins/30.jpg"
+                                                                alt="Dessin 30"></figure>
+                                                        <figure class="image"><img src="./media/img/dessins/28.jpg"
+                                                                alt="Dessin 28"></figure>
+                                                        <figure class="image"><img src="./media/img/dessins/34.jpg"
+                                                                alt="Dessin 34"></figure>
+                                                        <figure class="image"><img src="./media/img/dessins/37.jpg"
+                                                                alt="Dessin 37"></figure>
+                                                    </div>
+                                                </div>
+                                            </section>
+                                        </div>
+                                    </div>
+
+                                    <article class="slide" style="display:none;">
+                                        <h3 class="title is-size-4">Musique</h3>
+                                        <a class="has-text-success mb-3"
+                                            href="https://open.spotify.com/playlist/3nHgohzJZ09ujXbpkJFhDS?si=W7VxWtQVQ_2_Q82PGU1baQ"
+                                            title="Ma playlist Spotify" target="_blank">
+                                            <i class="fa-brands fa-3x fa-spotify" aria-hidden="true"></i>
+                                        </a>
+                                        <p class="m-3">Mon Spotify</p>
+                                    </article>
+
+                                    <article class="slide" style="display:none;">
+                                        <h3 class="title is-size-4">Cinéma</h3>
+                                        <a class="has-text-info" href="https://boxd.it/eNUj9"
+                                            title="Mon profil Letterboxd" target="_blank">
+                                            <i class="fa-brands fa-3x fa-letterboxd" aria-hidden="true"></i>
+                                        </a>
+                                        <p>Mon Letterboxd</p>
+                                    </article>
+
+                                </div>
+                                <button class="button is-ghost px-2" id="nextBtn" title="Passion suivante"
+                                    aria-label="Passion suivante">
+                                    <span class="icon is-medium"><i class="fas fa-chevron-right fa-lg"
+                                            aria-hidden="true"></i></span>
+                                </button>
+                            </div>
+                            <div class="is-flex is-justify-content-center mt-5" id="dots"></div>
+                        </div>
+                    </div>
+
+                    <div class="message">
+                        <div class="message-header">
+                            <p class="has-text-white">Formation</p>
+                        </div>
+                        <div class="message-body">
+                            <div class="mb-5">
+                                <h3 class="title is-5">Baccalauréat Général | Mention Bien</h3>
+                                <p>Spécialités Mathématiques, Numérique et Sciences Informatiques</p>
+                                <p>Lycée Cornouaille, Quimper, 2022 - 2025</p>
+                            </div>
+                            <div>
+                                <h3 class="title is-5">Bachelor Universitaire et Technologique | Métiers du Multimédia
+                                    et de l'Internet</h3>
+                                <p>IUT de Lannion, Lannion, 2025 - Actuellement</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="projets" aria-label="Mes projets" class="py-5">
+            <h2 class="title has-text-centered has-text-white">Mes projets</h2>
+
+            <div class="columns">
+
+                <div class="column is-one-third mx-auto">
+
+                    <article class="card mb-4">
+                        <div class="card-image">
+                            <div class="video">
+                                <video src="./media/video/Dream_3.mov" controls controlslist="novolume"
+                                    aria-label="Vidéo de présentation du projet UREI"></video>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h2 class="is-size-1">Création de visuels pour un jeu vidéo</h2>
+                            <div class="tags are-small mb-3">
+                                <span class="tag is-rounded">Graphisme</span>
+                                <span class="tag is-rounded">Travail d'équipe</span>
+                            </div>
+                            <h3 class="title is-size-5">Contexte</h3>
+                            <p class="is-size-6">Réaliser un petit jeu vidéo de type platformer, dans lequel le lore de
+                                l'histoire se raconte à travers différentes cinématiques animées en 2D, des dialogues,
+                                ou encore les backgrounds de certaines zones.</p>
+                            <a href="#" class="button mt-4 has-background-dark has-text-white voir-projet"
+                                data-projet="1" title="Voir le détail du projet UREI">Voir le projet</a>
+                        </div>
+                    </article>
+
+                    <article class="card mb-4">
+                        <div class="card-image">
+                            <figure class="image">
+                                <img src="media/img/magazine/cover.jpg" alt="Couvertures des magazines réalisés">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <h2 class="is-size-1">Création de pages de magazine</h2>
+                            <div class="tags are-small mb-3">
+                                <span class="tag is-rounded">Design</span>
+                                <span class="tag">Canva</span>
+                            </div>
+                            <h3 class="title is-size-5">Contexte</h3>
+                            <p class="is-size-6">Dans le cadre de ma formation, plus précisément dans le cadre de
+                                projets réalisés en cours d'anglais, nous travaillions en groupe sur la création de
+                                pages de magazine, avec des contraintes de temps assez strictes et un rendu oral
+                                présentant nos créations.</p>
+                            <a href="#" class="button mt-4 has-background-dark has-text-white voir-projet"
+                                data-projet="2" title="Voir le détail du projet magazine">Voir le projet</a>
+                        </div>
+                    </article>
+
+                    <article class="card mb-4">
+                        <div class="card-image">
+                            <figure class="image">
+                                <img src="./media/img/film.jpg"
+                                    alt="Capture d'écran du film de sensibilisation aux déchets">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <h2 class="is-size-1">Réalisation d'un film de sensibilisation</h2>
+                            <div class="tags are-small mb-3">
+                                <span class="tag is-rounded">Audiovisuel</span>
+                                <span class="tag">Cadrage</span>
+                            </div>
+                            <h3 class="title is-size-5">Contexte</h3>
+                            <p class="is-size-6">Dans le cadre de la formation MMI, j'ai réalisé un court métrage de
+                                sensibilisation aux déchets au sein d'une équipe de cinq personnes. Le projet devait
+                                respecter des contraintes précises : une durée de 1 minute 40 secondes, 10 plans maximum
+                                et l'utilisation d'un matériel limité (caméra, perche, mixette).</p>
+                            <a href="#" class="button mt-4 has-background-dark has-text-white voir-projet"
+                                data-projet="3" title="Voir le détail du projet film">Voir le projet</a>
+                        </div>
+                    </article>
+
+                    <article class="card mb-4">
+                        <div class="card-image">
+                            <figure class="image">
+                                <img src="./media/img/site/site.png" alt="Capture d'écran du site web Pokémon finalisé">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <h2 class="is-size-1">Développement d'un site web Pokémon</h2>
+                            <div class="tags are-small mb-3">
+                                <span class="tag is-rounded">Développement web</span>
+                                <span class="tag">Front-end</span>
+                            </div>
+                            <h3 class="title is-size-5">Contexte</h3>
+                            <p class="is-size-6">Dans le cadre de ma formation MMI, j'ai réalisé un site web reprenant
+                                le concept de collection Pokémon. Le projet imposait des contraintes techniques précises
+                                : le codage devait être effectué en HTML, sans CSS personnalisé, avec pour seul
+                                framework autorisé Bulma.</p>
+                            <a href="#" class="button mt-4 has-background-dark has-text-white voir-projet"
+                                data-projet="4" title="Voir le détail du projet site Pokémon">Voir le projet</a>
+                        </div>
+                    </article>
+
+                </div>
+
+                <div id="projet-1-content" hidden>
+                    <h3 class="title is-4 has-text-black">Création de visuels pour un jeu vidéo</h3>
+                    <h4 class="title is-5 mb-2 has-text-black">Missions</h4>
+                    <ul class="mb-4 has-text-black">
+                        <li>Réflexion sur la direction artistique du jeu : palettes de couleurs, environnement, époque
+                        </li>
+                        <li>Réalisation de sprites animés en pixel art</li>
+                        <li>Réalisation d'éléments de décor</li>
+                        <li>Réalisation d'une animation 2D introduisant le jeu</li>
+                    </ul>
+                    <h4 class="title is-5 mb-2 has-text-black">Compétences mobilisées</h4>
+                    <ul class="mb-4 has-text-black">
+                        <li>Illustration</li>
+                        <li>Animation (pixel / 2D, mouvement)</li>
+                        <li>Exprimer un message / une histoire au travers de visuels</li>
+                    </ul>
+                    <h4 class="title is-5 mb-2 has-text-black">Résultat</h4>
+                    <ul class="mb-4 has-text-black">
+                        <li>Animation exploitable pour le développement du jeu</li>
+                        <li>Univers visuel clair et cohérent</li>
+                    </ul>
+                    <img src="./media/img/urei/urei_idle.gif" alt="Sprite animé du personnage UREI au repos">
+                    <img src="./media/img/urei/samourai-run.gif" alt="Sprite animé du samourai en course">
+                    <img src="./media/img/urei/Samourai-walk.gif" alt="Sprite animé du samourai en marche de profil">
+                    <img src="./media/img/urei/Samourai-walk-face.gif" alt="Sprite animé du samourai en marche de face">
+                    <img src="./media/img/urei/fond_urei.png" alt="Fond d'une forêt en pixel art">
+                </div>
+
+                <div id="projet-2-content" hidden>
+                    <h3 class="title is-4 has-text-black">Création de pages de magazine en anglais</h3>
+                    <h4 class="title is-5 mb-2 has-text-black">Missions</h4>
+                    <ul class="mb-4 has-text-black">
+                        <li>Recherche d'informations pertinentes sur le sujet</li>
+                        <li>Sélection d'images adaptées pour illustrer le contenu</li>
+                        <li>Rédaction des textes en anglais</li>
+                        <li>Mise en page sur Canva (organisation, cohérence visuelle)</li>
+                    </ul>
+                    <h4 class="title is-5 mb-2 has-text-black">Compétences mobilisées</h4>
+                    <ul class="mb-4 has-text-black">
+                        <li>Maîtrise d'un outil de création graphique (Canva)</li>
+                        <li>Gestion du temps et respect des délais</li>
+                        <li>Organisation du travail</li>
+                        <li>Travail en équipe et collaboration</li>
+                    </ul>
+                    <h4 class="title is-5 mb-2 has-text-black">Résultat</h4>
+                    <ul class="has-text-black">
+                        <li>Présentations orales réussies et bien accueillies</li>
+                        <li>Développement de compétences techniques et méthodologiques</li>
+                    </ul>
+                    <img src="./media/img/magazine/1/1.jpg" alt="Page 1 du premier magazine">
+                    <img src="./media/img/magazine/1/2.jpg" alt="Page 2 du premier magazine">
+                    <img src="./media/img/magazine/1/3.jpg" alt="Page 3 du premier magazine">
+                    <img src="./media/img/magazine/1/4.jpg" alt="Page 4 du premier magazine">
+                    <img src="./media/img/magazine/2/1.jpg" alt="Page 1 du deuxième magazine">
+                    <img src="./media/img/magazine/2/2.jpg" alt="Page 2 du deuxième magazine">
+                    <img src="./media/img/magazine/2/3.jpg" alt="Page 3 du deuxième magazine">
+                    <img src="./media/img/magazine/3/1.jpg" alt="Page 1 du troisième magazine">
+                    <img src="./media/img/magazine/3/2.jpg" alt="Page 2 du troisième magazine">
+                    <img src="./media/img/magazine/3/3.jpg" alt="Page 3 du troisième magazine">
+                </div>
+
+                <div id="projet-3-content" hidden>
+                    <h3 class="title is-4 has-text-black">Réalisation d'un film de sensibilisation</h3>
+                    <h4 class="title is-5 mb-2 has-text-black">Missions</h4>
+                    <ul class="mb-4 has-text-black">
+                        <li>Rédaction du scénario, synopsis, choix des plans</li>
+                        <li>Réalisation du storyboard et d'une shotlist</li>
+                        <li>Cadreur et script</li>
+                    </ul>
+                    <h4 class="title is-5 mb-2 has-text-black">Compétences mobilisées</h4>
+                    <ul class="mb-4 has-text-black">
+                        <li>Coordination de l'équipe</li>
+                        <li>Réflexion sur un sujet donné</li>
+                        <li>Adaptation aux limites</li>
+                    </ul>
+                    <h4 class="title is-5 mb-2 has-text-black">Résultat</h4>
+                    <ul class="has-text-black">
+                        <li>Diffusion du film au sein de l'IUT</li>
+                        <li>Publication sur YouTube</li>
+                    </ul>
+                    <div class="tabs is-rounded card-video">
+                        <video src="./media/video/1A1_Equipe03.mp4" controls
+                            aria-label="Film de sensibilisation"></video>
+                    </div>
+                </div>
+
+                <div id="projet-4-content" hidden>
+                    <h3 class="title is-4 has-text-black">Conception et intégration d'un site web</h3>
+                    <h4 class="title is-5 mb-2 has-text-black">Missions</h4>
+                    <ul class="mb-4 has-text-black">
+                        <li>Réflexion sur l'univers du site et définition de trois directions artistiques</li>
+                        <li>Réalisation d'un wireframe afin de concevoir la structure du site</li>
+                        <li>Choix de l'univers final et mise en couleur de l'interface</li>
+                        <li>Intégration du site en HTML et Bulma</li>
+                        <li>Mise en accessibilité et mise en ligne du site</li>
+                    </ul>
+                    <h4 class="title is-5 mb-2 has-text-black">Compétences mobilisées</h4>
+                    <ul class="mb-4 has-text-black">
+                        <li>Conception d'interface utilisateur</li>
+                        <li>Adaptation à des contraintes techniques</li>
+                        <li>Découverte et prise en main d'un nouveau framework</li>
+                        <li>Organisation et structuration d'un projet web</li>
+                    </ul>
+                    <h4 class="title is-5 mb-2 has-text-black">Résultat</h4>
+                    <ul class="mb-4 has-text-black">
+                        <li>Site web accessible en ligne sur le réseau de l'IUT</li>
+                        <li>Univers visuel clair et cohérent</li>
+                        <li>Meilleure compréhension de l'importance de la phase de maquettage et de réflexion dans la
+                            conception d'un site web</li>
+                    </ul>
+                    <h4 class="title is-5 mb-2 has-text-black">Maquette</h4>
+                    <img src="./media/img/site/site2.png" alt="Maquette wireframe du site Pokémon">
+                    <img src="./media/img/site/site1.png" alt="Maquette colorisée du site Pokémon">
+                    <img src="./media/img/site/site.png" alt="Capture d'écran du site Pokémon finalisé">
+                </div>
+
+                <div class="column is-one-third sticky-column">
+                    <img src="./media/img/icarus.png" alt="Illustration d'Icare qui tombe">
+                </div>
+            </div>
+
+            <div id="drawer" class="box has-background-light" role="dialog" aria-modal="true"
+                aria-labelledby="drawer-titre">
+                <button class="delete is-large mb-4" id="closeDrawer" title="Fermer"
+                    aria-label="Fermer le panneau"></button>
+                <h2 class="title has-text-black" id="drawer-titre">Détail du projet</h2>
+                <div id="drawer-contenu"></div>
+            </div>
+            <div id="overlay"></div>
+
+        </section>
+
+        <section id="competences" aria-label="Mes compétences" class="p-6">
+            <h2 class="title has-text-centered m-3">Mes compétences</h2>
+            <div class="container box has-background-light">
+                <div class="message">
+                    <div class="message-header">
+                        <h3 class="subtitle has-text-centered has-text-white">Compétences techniques</h3>
+                    </div>
+                    <div class="message-body">
+                        <div class="marquee-wrapper">
+                            <div class="marquee-track" id="marquee-track">
+
+                                <div
+                                    class="skill box mx-3 is-flex is-flex-direction-column is-align-items-center skill-card">
+                                    <figure class="image is-64x64">
+                                        <img src="./media/icons/devicon--illustrator.svg" alt="Adobe Illustrator">
+                                    </figure>
+                                    <p class="is-size-7 has-text-light mt-2 skill-name">Illustrator</p>
+                                </div>
+
+                                <div
+                                    class="skill box mx-3 is-flex is-flex-direction-column is-align-items-center skill-card">
+                                    <figure class="image is-64x64">
+                                        <img src="./media/icons/devicon--photoshop.svg" alt="Adobe Photoshop">
+                                    </figure>
+                                    <p class="is-size-7 has-text-light mt-2 skill-name">Photoshop</p>
+                                </div>
+
+                                <div
+                                    class="skill box mx-3 is-flex is-flex-direction-column is-align-items-center skill-card">
+                                    <figure class="image is-64x64">
+                                        <img src="./media/icons/logo-photopea.svg" alt="Photopea">
+                                    </figure>
+                                    <p class="is-size-7 has-text-light mt-2 skill-name">Photopea</p>
+                                </div>
+
+                                <div
+                                    class="skill box mx-3 is-flex is-flex-direction-column is-align-items-center skill-card">
+                                    <figure class="image is-64x64">
+                                        <img src="./media/icons/logo-ibispaint.svg" alt="Ibis Paint X">
+                                    </figure>
+                                    <p class="is-size-7 has-text-light mt-2 skill-name">Ibis Paint X</p>
+                                </div>
+
+                                <div
+                                    class="skill box mx-3 is-flex is-flex-direction-column is-align-items-center skill-card">
+                                    <figure class="image is-64x64">
+                                        <img src="./media/icons/devicon--figma.svg" alt="Figma">
+                                    </figure>
+                                    <p class="is-size-7 has-text-light mt-2 skill-name">Figma</p>
+                                </div>
+
+                                <div
+                                    class="skill box mx-3 is-flex is-flex-direction-column is-align-items-center skill-card">
+                                    <figure class="image is-64x64">
+                                        <img src="./media/icons/logo-canva.svg" alt="Canva">
+                                    </figure>
+                                    <p class="is-size-7 has-text-light mt-2 skill-name">Canva</p>
+                                </div>
+
+                                <div
+                                    class="skill box mx-3 is-flex is-flex-direction-column is-align-items-center skill-card">
+                                    <figure class="image is-64x64">
+                                        <img src="./media/icons/logo-docs.png" alt="Google Docs">
+                                    </figure>
+                                    <p class="is-size-7 has-text-light mt-2 skill-name">Google Docs</p>
+                                </div>
+
+                                <div
+                                    class="skill box mx-3 is-flex is-flex-direction-column is-align-items-center skill-card">
+                                    <figure class="image is-64x64">
+                                        <img src="./media/icons/logo-aseprite.svg" alt="Aseprite">
+                                    </figure>
+                                    <p class="is-size-7 has-text-light mt-2 skill-name">Aseprite</p>
+                                </div>
+
+                                <div
+                                    class="skill box mx-3 is-flex is-flex-direction-column is-align-items-center skill-card">
+                                    <figure class="image is-64x64">
+                                        <img src="./media/icons/logos-procreate.png" alt="Procreate">
+                                    </figure>
+                                    <p class="is-size-7 has-text-light mt-2 skill-name">Procreate</p>
+                                </div>
+
+                                <div
+                                    class="skill box mx-3 is-flex is-flex-direction-column is-align-items-center skill-card">
+                                    <figure class="image is-64x64">
+                                        <img src="./media/icons/logo-python.png" alt="Python">
+                                    </figure>
+                                    <p class="is-size-7 has-text-light mt-2 skill-name">Python</p>
+                                </div>
+
+                                <div
+                                    class="skill box mx-3 is-flex is-flex-direction-column is-align-items-center skill-card">
+                                    <figure class="image is-64x64">
+                                        <img src="./media/icons/logos--html-5.png" alt="HTML5">
+                                    </figure>
+                                    <p class="is-size-7 has-text-light mt-2 skill-name">HTML5</p>
+                                </div>
+
+                                <div
+                                    class="skill box mx-3 is-flex is-flex-direction-column is-align-items-center skill-card">
+                                    <figure class="image is-64x64">
+                                        <img src="./media/icons/logos--css-3.png" alt="CSS3">
+                                    </figure>
+                                    <p class="is-size-7 has-text-light mt-2 skill-name">CSS3</p>
+                                </div>
+
+                                <div
+                                    class="skill box mx-3 is-flex is-flex-direction-column is-align-items-center skill-card">
+                                    <figure class="image is-64x64">
+                                        <img src="./media/icons/logo-php.png" alt="PHP">
+                                    </figure>
+                                    <p class="is-size-7 has-text-light mt-2 skill-name">PHP</p>
+                                </div>
+
+                                <div
+                                    class="skill box mx-3 is-flex is-flex-direction-column is-align-items-center skill-card">
+                                    <figure class="image is-64x64">
+                                        <img src="./media/icons/logo-sql.png" alt="SQL">
+                                    </figure>
+                                    <p class="is-size-7 has-text-light mt-2 skill-name">SQL</p>
+                                </div>
+
+                                <div
+                                    class="skill box mx-3 is-flex is-flex-direction-column is-align-items-center skill-card">
+                                    <figure class="image is-64x64 is-1by1">
+                                        <img src="./media/icons/logos-bulma.svg" alt="Bulma">
+                                    </figure>
+                                    <p class="is-size-7 has-text-light mt-2 skill-name">Bulma</p>
+                                </div>
+
+                                <div
+                                    class="skill box mx-3 is-flex is-flex-direction-column is-align-items-center skill-card">
+                                    <figure class="image is-64x64">
+                                        <img src="./media/icons/devicon--vscode.svg" alt="VS Code">
+                                    </figure>
+                                    <p class="is-size-7 has-text-light mt-2 skill-name">VS Code</p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="message">
+                    <div class="message-header">
+                        <h3 class="subtitle has-text-centered has-text-white">Compétences générales</h3>
+                    </div>
+                    <div class="message-body">
+                        <div class="columns is-multiline is-centered">
+
+                            <div class="column is-half">
+                                <div class="box soft has-background-dark is-flex is-align-items-center"
+                                    style="gap: 1rem;">
+                                    <span class="icon is-large has-text-warning">
+                                        <i class="fas fa-2x fa-lightbulb"></i>
+                                    </span>
+                                    <div>
+                                        <p class="has-text-white has-text-weight-bold">Créativité</p>
+                                        <p class="has-text-light is-size-7">J'aime imaginer des solutions originales et
+                                            explorer de nouvelles approches.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="column is-half">
+                                <div class="box soft has-background-dark is-flex is-align-items-center"
+                                    style="gap: 1rem;">
+                                    <span class="icon is-large has-text-danger">
+                                        <i class="fas fa-2x fa-fire"></i>
+                                    </span>
+                                    <div>
+                                        <p class="has-text-white has-text-weight-bold">Persévérance</p>
+                                        <p class="has-text-light is-size-7">Je ne lâche pas face aux obstacles, je
+                                            cherche jusqu'à trouver.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="column is-half">
+                                <div class="box soft has-background-dark is-flex is-align-items-center"
+                                    style="gap: 1rem;">
+                                    <span class="icon is-large has-text-success">
+                                        <i class="fas fa-2x fa-user-check"></i>
+                                    </span>
+                                    <div>
+                                        <p class="has-text-white has-text-weight-bold">Autonomie</p>
+                                        <p class="has-text-light is-size-7">Je suis capable de m'organiser et d'avancer
+                                            seul sur un projet.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="column is-half">
+                                <div class="box soft has-background-dark is-flex is-align-items-center"
+                                    style="gap: 1rem;">
+                                    <span class="icon is-large has-text-info">
+                                        <i class="fas fa-2x fa-magnifying-glass"></i>
+                                    </span>
+                                    <div>
+                                        <p class="has-text-white has-text-weight-bold">Curiosité</p>
+                                        <p class="has-text-light is-size-7">J'explore constamment de nouveaux outils,
+                                            médias et domaines créatifs.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer id="contact" class="footer has-background-light p-6">
+        <div class="has-text-centered">
+            <h2 class="title has-text-black">Me contacter</h2>
+            <div class="is-flex is-justify-content-space-between mb-6">
+                <a class="button is-rounded is-fullwidth mx-2" href="tel:+33769380435">Téléphone : +33769350435</a>
+                <a class="button is-rounded is-fullwidth mx-2" href="mailto:luka.dombre@gmail.com" target="_blank">Email
+                    : luka.dombre@gmail.com</a>
+                <a class="button is-rounded is-fullwidth mx-2" href="https://www.linkedin.com/in/luka-dombre"
+                    target="_blank" title="Mon profil LinkedIn">LinkedIn</a>
+            </div>
+            <p class="has-text-black">Portfolio by Luka Dombre</p>
+        </div>
+    </footer>
+
+    <script src="./script.js" defer></script>
+
+</body>
+
+</html>
