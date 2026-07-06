@@ -190,12 +190,12 @@ function renderMedia(array $media, bool $forCard = false): void
     <meta property="og:title" content="Luka Dombre — Portfolio graphisme, dessin et web">
     <meta property="og:description"
         content="Découvre les projets créatifs de Luka Dombre : dessin, graphisme, édition, audiovisuel et développement web.">
-    <meta property="og:image" content="./media/img/jigsaw2.jpg">
+    <meta property="og:image" content="https://lukaillou.github.io/portfolio/media/img/portfolio.png">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Luka Dombre — Portfolio graphisme, dessin et web">
     <meta name="twitter:description"
         content="Portfolio créatif entre dessin, graphisme, audiovisuel et intégration web.">
-    <meta name="twitter:image" content="./media/img/jigsaw2.jpg">
+    <meta name="twitter:image" content="https://lukaillou.github.io/portfolio/media/img/portfolio.png">
     <link rel="stylesheet" href="./style/css/bulma.min.css">
     <link rel="stylesheet" href="./style/css/css/all.css">
     <link rel="stylesheet" href="./style/style.css">
@@ -222,6 +222,8 @@ function renderMedia(array $media, bool $forCard = false): void
                 <div class="navbar-start">
                     <a class="navbar-item bouton scribble-underline" href="#projets" title="Voir mes projets">Mes
                         projets</a>
+                    <a class="navbar-item bouton scribble-underline" href="#recherche"
+                        title="Voir ce que je recherche">Alternance</a>
                     <a class="navbar-item bouton scribble-underline" href="#competences"
                         title="Voir mes compétences">Mes
                         compétences</a>
@@ -266,6 +268,37 @@ function renderMedia(array $media, bool $forCard = false): void
                     <img src="./media/img/portfolio.png" alt="Photographie et assemblage d'élément de dessins Portfolio">
                     <figcaption>carnet, page 1</figcaption>
                 </figure>
+            </div>
+        </section>
+
+        <section id="recherche" class="search-section" aria-labelledby="search-title">
+            <div class="search-shell scroll-reveal">
+                <div class="search-copy">
+                    <p class="eyebrow">Ce que je recherche</p>
+                    <h2 id="search-title" class="title">Une alternance en graphisme</h2>
+                    <div class="search-notes" aria-label="Informations de recherche">
+                        <span><strong>Type</strong> Alternance</span>
+                        <span><strong>Lieu</strong> Bretagne / à distance</span>
+                        <span><strong>Disponibilité</strong> Disponible à partir de septembre 2026</span>
+                    </div>
+                </div>
+                <div class="search-details" aria-label="Domaines visés">
+                    <span><i class="fa-solid fa-pen-nib" aria-hidden="true"></i> Graphisme</span>
+                    <span><i class="fa-solid fa-layer-group" aria-hidden="true"></i> Identité visuelle</span>
+                    <span><i class="fa-solid fa-palette" aria-hidden="true"></i> Illustration</span>
+                    <span><i class="fa-solid fa-desktop" aria-hidden="true"></i> Web créatif</span>
+                    <span><i class="fa-solid fa-film" aria-hidden="true"></i> Audiovisuel</span>
+                </div>
+                <div class="search-actions">
+                    <a class="search-link search-link--primary" href="#contact">
+                        <span>Me contacter</span>
+                        <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                    <a class="search-link" href="./media/CV_Luka_Dombre.pdf" target="_blank" rel="noopener">
+                        <span>Voir mon CV</span>
+                        <i class="fa-solid fa-file-arrow-down" aria-hidden="true"></i>
+                    </a>
+                </div>
             </div>
         </section>
 

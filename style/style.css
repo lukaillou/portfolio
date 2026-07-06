@@ -246,6 +246,111 @@ a.scribble-underline:hover,
     letter-spacing: 0;
 }
 
+/* ============ RECHERCHE ============ */
+.search-section {
+    background:
+        linear-gradient(90deg, rgba(63,90,138,0.12), transparent 32%),
+        linear-gradient(180deg, rgba(255,255,255,0.28), transparent 42%),
+        var(--paper-alt);
+    border-bottom: 1.5px solid var(--graphite);
+    border-top: 1.5px solid var(--graphite);
+    margin: 3rem 0 3.4rem;
+    padding: 2rem 1rem;
+}
+.search-shell {
+    align-items: center;
+    display: grid;
+    gap: 1.4rem;
+    grid-template-columns: minmax(0, 1.15fr) minmax(260px, 0.85fr);
+    margin: 0 auto;
+    width: min(1120px, 100%);
+}
+.search-copy .title {
+    font-size: clamp(2rem, 5vw, 3.1rem);
+    line-height: 1;
+    margin-bottom: 0.75rem;
+}
+.search-copy p:last-child {
+    line-height: 1.55;
+    max-width: 66ch;
+}
+.search-notes {
+    border-top: 1px dashed var(--graphite-soft);
+    display: grid;
+    gap: 0.45rem;
+    margin-top: 1rem;
+    padding-top: 0.85rem;
+}
+.search-notes span {
+    color: var(--graphite-soft);
+    font-size: 0.92rem;
+    line-height: 1.35;
+}
+.search-notes strong {
+    color: var(--mark-red);
+    display: inline-block;
+    font-size: 0.72rem;
+    letter-spacing: 0;
+    margin-right: 0.45rem;
+    text-transform: uppercase;
+}
+.search-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem;
+}
+.search-details span {
+    align-items: center;
+    background: rgba(253,252,250,0.46);
+    border: 1.5px solid var(--graphite);
+    border-radius: 3px;
+    color: var(--graphite);
+    display: inline-flex;
+    font-size: 0.82rem;
+    font-weight: 700;
+    gap: 0.45rem;
+    min-height: 2.25rem;
+    padding: 0.45rem 0.65rem;
+}
+.search-details i {
+    color: var(--pencil-blue);
+}
+.search-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    grid-column: 1 / -1;
+}
+.search-link {
+    align-items: center;
+    background: transparent;
+    border: 1.5px solid var(--graphite);
+    border-radius: 3px;
+    color: var(--graphite);
+    display: inline-flex;
+    font-weight: 700;
+    gap: 0.65rem;
+    min-height: 2.65rem;
+    padding: 0.65rem 0.9rem;
+    text-decoration: none;
+    transition: background .2s ease, color .2s ease, transform .2s ease;
+}
+.search-link--primary {
+    background: var(--graphite);
+    color: var(--paper);
+}
+.search-link:hover,
+.search-link:focus-visible {
+    background: var(--pencil-blue);
+    border-color: var(--pencil-blue);
+    color: var(--paper);
+    transform: translateY(-2px) rotate(-0.35deg);
+}
+.search-link:focus-visible {
+    outline: 2px solid var(--mark-red);
+    outline-offset: 3px;
+}
+
 /* ============ A PROPOS ============ */
 .about-layout {
     margin: 4rem 0 5.5rem;
@@ -1429,6 +1534,12 @@ a.scribble-underline:hover,
     .contact-grid {
         grid-template-columns: 1fr;
     }
+    .search-shell {
+        grid-template-columns: 1fr;
+    }
+    .search-actions {
+        grid-column: auto;
+    }
     .about-heading .title,
     #projets .title,
     .contact-heading .title {
@@ -1486,6 +1597,23 @@ a.scribble-underline:hover,
     }
     .hero-cta {
         justify-content: center;
+        width: 100%;
+    }
+    .search-section {
+        margin: 2.4rem 0 2.8rem;
+        padding: 1.5rem 0.75rem;
+    }
+    .search-shell {
+        gap: 1rem;
+    }
+    .search-details {
+        gap: 0.45rem;
+    }
+    .search-details span {
+        width: 100%;
+    }
+    .search-link {
+        justify-content: space-between;
         width: 100%;
     }
     .projects-grid {
@@ -1586,12 +1714,6 @@ a.scribble-underline:hover,
     #competences {
         padding-left: 1rem !important;
         padding-right: 1rem !important;
-    }
-    .contact-section {
-        padding: 3.8rem 1rem 2.8rem;
-    }
-    .contact-link {
-        min-height: 0;
     }
     .back-to-top {
         bottom: 0.8rem;
@@ -1925,7 +2047,7 @@ a.scribble-underline:hover,
 .contact-grid {
     display: grid;
     gap: 0.9rem;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr));
 }
 .contact-link {
     align-items: center;
@@ -1939,6 +2061,9 @@ a.scribble-underline:hover,
     padding: 0.9rem;
     text-decoration: none;
     transition: background .2s ease, box-shadow .2s ease, transform .2s ease;
+}
+.contact-link > span:last-child {
+    min-width: 0;
 }
 .contact-link:hover,
 .contact-link:focus-visible {
@@ -1978,6 +2103,7 @@ a.scribble-underline:hover,
     font-size: 0.84rem;
     line-height: 1.25;
     overflow-wrap: anywhere;
+    word-break: break-word;
 }
 #contact .note {
     color: var(--moss);
@@ -2022,4 +2148,70 @@ a.scribble-underline:hover,
     outline-offset: 3px;
 }
 
-#projets, #competences, #contact { scroll-margin-top: 6rem; }
+@media (max-width: 1100px) {
+    .contact-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 900px) {
+    .contact-heading {
+        align-items: start;
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 760px) {
+    .contact-section {
+        padding: 3.2rem 0.75rem 2.4rem;
+    }
+    .contact-shell {
+        width: 100%;
+    }
+    .contact-heading {
+        gap: 0.8rem;
+        margin-bottom: 1rem;
+        padding-bottom: 1rem;
+    }
+    .contact-heading .title {
+        font-size: clamp(2.1rem, 13vw, 2.55rem);
+        overflow-wrap: anywhere;
+    }
+    .contact-heading p:last-child {
+        font-size: 0.95rem;
+        line-height: 1.45;
+    }
+    .contact-grid {
+        gap: 0.7rem;
+        grid-template-columns: 1fr;
+    }
+    .contact-link {
+        align-items: flex-start;
+        gap: 0.7rem;
+        min-height: 0;
+        min-width: 0;
+        padding: 0.8rem;
+        width: 100%;
+    }
+    .contact-icon {
+        height: 2.35rem;
+        width: 2.35rem;
+    }
+    .contact-link strong {
+        font-size: 1rem;
+    }
+    .contact-link small {
+        font-size: 0.8rem;
+    }
+    #contact .note {
+        padding: 0 0.5rem;
+    }
+}
+
+@media (max-width: 380px) {
+    .contact-link {
+        flex-direction: column;
+    }
+}
+
+#recherche, #projets, #competences, #contact { scroll-margin-top: 6rem; }
