@@ -1,2 +1,2 @@
-# portfolio
-Portfolio de Luka Dombre, codé en HTML/CSS et javaScript 
+# Mon portfolio
+Portfolio de Luka Dombre, codé en HTML/CSS, PHP et JavaScript 
