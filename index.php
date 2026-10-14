@@ -18,24 +18,24 @@ $previewDrawings = array_slice($drawings, 0, 4);
 $momentPicks = [
     'music' => [
         'label' => 'son du moment',
-        'title' => 'Under Pressure',
-        'meta' => 'Queen',
+        'title' => 'Heroes',
+        'meta' => 'David Bowie',
         'note' => 'Le morceau que j\'écoute en boucle en ce moment.',
         'link' => 'https://open.spotify.com/playlist/3nHgohzJZ09ujXbpkJFhDS?si=W7VxWtQVQ_2_Q82PGU1baQ',
         'action' => 'Ouvrir Spotify',
         'icon' => 'fa-brands fa-spotify',
-        'image' => './media/moment/up.jpg',
+        'image' => './media/moment/music.jpg',
         'image_alt' => 'Pochette stylisée du morceau Under Pressure',
     ],
     'film' => [
         'label' => 'film du moment',
-        'title' => 'Aftersun',
-        'meta' => 'Charlotte Wells / 2022',
+        'title' => 'Jojo Rabbit',
+        'meta' => 'Taika Waititi / 2019',
         'note' => 'Le film qui me reste en tête ces derniers temps.',
         'link' => 'https://boxd.it/eNUj9',
         'action' => 'Ouvrir Letterboxd',
         'icon' => 'fa-brands fa-letterboxd',
-        'image' => './media/moment/aftersun.jpg',
+        'image' => './media/moment/film.jpg',
         'image_alt' => 'Affiche stylisée du film Aftersun',
     ],
 ];
@@ -275,16 +275,16 @@ function renderMedia(array $media, bool $forCard = false): void
             <div class="search-shell scroll-reveal">
                 <div class="search-copy">
                     <p class="eyebrow">Ce que je recherche</p>
-                    <h2 id="search-title" class="title">Une alternance en graphisme</h2>
+                    <h2 id="search-title" class="title">Un stage entre avril 2027 et juin 2027</h2>
                     <div class="search-notes" aria-label="Informations de recherche">
-                        <span><strong>Type</strong> Alternance</span>
-                        <span><strong>Lieu</strong> Bretagne / à distance</span>
-                        <span><strong>Disponibilité</strong> Disponible à partir de septembre 2026</span>
+                        <span><strong>Type</strong> Stage</span>
+                        <span><strong>Lieu</strong> Autour de Quimper ou Lannion</span>
+                        <span><strong>Disponibilité</strong> Entre le 5 avril et le 18 juin</span>
                     </div>
                 </div>
                 <div class="search-details" aria-label="Domaines visés">
                     <span><i class="fa-solid fa-pen-nib" aria-hidden="true"></i> Graphisme</span>
-                    <span><i class="fa-solid fa-layer-group" aria-hidden="true"></i> Identité visuelle</span>
+                    <span><i class="fa-solid fa-layer-group" aria-hidden="true"></i> Communication</span>
                     <span><i class="fa-solid fa-palette" aria-hidden="true"></i> Illustration</span>
                     <span><i class="fa-solid fa-desktop" aria-hidden="true"></i> Web créatif</span>
                     <span><i class="fa-solid fa-film" aria-hidden="true"></i> Audiovisuel</span>
