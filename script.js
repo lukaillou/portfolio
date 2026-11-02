@@ -102,6 +102,7 @@ const nextLightbox = document.getElementById('nextLightbox');
 let lightboxItems = [];
 let lightboxIndex = 0;
 let lastLightboxTrigger = null;
+let lastProjectTrigger = null;
 
 const setLightboxImage = index => {
     if (!lightboxItems.length || !lightboxImage) return;
@@ -167,18 +168,26 @@ const openProjectLightbox = trigger => {
 };
 
 const toggle = show => {
+    const wasOpen = drawer.classList.contains('is-open');
     drawer.classList.toggle('is-open', show);
     overlay.classList.toggle('is-open', show);
     drawer.setAttribute('aria-hidden', show ? 'false' : 'true');
     document.body.classList.toggle('drawer-open', show);
     if (!show) toggleProjectLightbox(false, false);
     if (show && closeDrawer) closeDrawer.focus();
+    if (!show && wasOpen) lastProjectTrigger?.focus();
 };
 
 document.querySelectorAll('.voir-projet').forEach(btn =>
     btn.addEventListener('click', e => {
         e.preventDefault();
         const content = document.getElementById(`projet-${btn.dataset.projet}-content`);
+        if (!content) {
+            console.error(`Détail introuvable pour le projet ${btn.dataset.projet}.`);
+            return;
+        }
+
+        lastProjectTrigger = btn;
         const clone = content.cloneNode(true);
         const fallbackTitle = clone.querySelector('h3');
         drawerTitle.textContent = content.dataset.title || fallbackTitle?.textContent || 'Détail du projet';
@@ -226,6 +235,7 @@ document.addEventListener('keydown', e => {
 
     if (e.key === 'Escape') {
         e.preventDefault();
+        e.stopImmediatePropagation();
         toggleProjectLightbox(false);
     }
 
@@ -262,6 +272,7 @@ const nextDrawingLightbox = document.getElementById('nextDrawingLightbox');
 let drawingItems = [];
 let drawingIndex = 0;
 let lastDrawingTrigger = null;
+let lastDrawingsOpener = null;
 let drawingThumbsWarmed = false;
 
 const warmDrawingThumbs = (immediate = false) => {
@@ -361,6 +372,7 @@ const openDrawingLightbox = trigger => {
 
 const toggleDrawings = show => {
     if (!modal) return;
+    const wasOpen = modal.classList.contains('is-active');
     modal.classList.toggle('is-active', show);
     modal.setAttribute('aria-hidden', show ? 'false' : 'true');
     document.body.classList.toggle('modal-open', show);
@@ -369,6 +381,7 @@ const toggleDrawings = show => {
         warmDrawingThumbs(true);
         closeDrawings?.focus();
     }
+    if (!show && wasOpen) lastDrawingsOpener?.focus();
 };
 
 if (modal) {
@@ -378,6 +391,7 @@ if (modal) {
 if (openDrawings) {
     openDrawings.onclick = e => {
         e.preventDefault();
+        lastDrawingsOpener = e.currentTarget;
         toggleDrawings(true);
     };
 }
@@ -439,6 +453,49 @@ document.addEventListener('keydown', e => {
         && modal?.classList.contains('is-active')
         && !drawingsLightbox?.classList.contains('is-open')
     ) toggleDrawings(false);
+});
+
+const focusableSelector = [
+    'a[href]',
+    'button:not([disabled])',
+    'input:not([disabled])',
+    'select:not([disabled])',
+    'textarea:not([disabled])',
+    '[tabindex]:not([tabindex="-1"])'
+].join(',');
+
+const trapTabFocus = (container, event) => {
+    if (event.key !== 'Tab') return;
+
+    const focusableElements = Array.from(container.querySelectorAll(focusableSelector))
+        .filter(element => element.getAttribute('aria-hidden') !== 'true' && element.getClientRects().length);
+    if (!focusableElements.length) {
+        event.preventDefault();
+        return;
+    }
+
+    const first = focusableElements[0];
+    const last = focusableElements[focusableElements.length - 1];
+    const activeElement = document.activeElement;
+
+    if (event.shiftKey && (activeElement === first || !container.contains(activeElement))) {
+        event.preventDefault();
+        last.focus();
+    } else if (!event.shiftKey && (activeElement === last || !container.contains(activeElement))) {
+        event.preventDefault();
+        first.focus();
+    }
+};
+
+document.addEventListener('keydown', event => {
+    const activeDialog = [
+        projectLightbox?.classList.contains('is-open') && projectLightbox,
+        drawingsLightbox?.classList.contains('is-open') && drawingsLightbox,
+        drawer?.classList.contains('is-open') && drawer,
+        modal?.classList.contains('is-active') && modal.querySelector('.modal-card')
+    ].find(Boolean);
+
+    if (activeDialog) trapTabFocus(activeDialog, event);
 });
 
 const track = document.getElementById('marquee-track');
