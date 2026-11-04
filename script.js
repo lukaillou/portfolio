@@ -103,6 +103,23 @@ let lightboxItems = [];
 let lightboxIndex = 0;
 let lastLightboxTrigger = null;
 let lastProjectTrigger = null;
+let lockedScrollY = 0;
+
+const updatePageScrollLock = () => {
+    const shouldLock = document.body.classList.contains('drawer-open')
+        || document.body.classList.contains('lightbox-open');
+    const isLocked = document.body.classList.contains('scroll-locked');
+
+    if (shouldLock && !isLocked) {
+        lockedScrollY = window.scrollY;
+        document.body.style.top = `-${lockedScrollY}px`;
+        document.body.classList.add('scroll-locked');
+    } else if (!shouldLock && isLocked) {
+        document.body.classList.remove('scroll-locked');
+        document.body.style.removeProperty('top');
+        window.scrollTo(0, lockedScrollY);
+    }
+};
 
 const setLightboxImage = index => {
     if (!lightboxItems.length || !lightboxImage) return;
@@ -136,6 +153,7 @@ const toggleProjectLightbox = (show, restoreFocus = true) => {
     projectLightbox.classList.toggle('is-open', show);
     projectLightbox.setAttribute('aria-hidden', show ? 'false' : 'true');
     document.body.classList.toggle('lightbox-open', show);
+    updatePageScrollLock();
 
     if (show) {
         closeLightbox?.focus();
@@ -174,6 +192,7 @@ const toggle = show => {
     drawer.setAttribute('aria-hidden', show ? 'false' : 'true');
     document.body.classList.toggle('drawer-open', show);
     if (!show) toggleProjectLightbox(false, false);
+    updatePageScrollLock();
     if (show && closeDrawer) closeDrawer.focus();
     if (!show && wasOpen) lastProjectTrigger?.focus();
 };

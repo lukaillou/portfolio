@@ -95,14 +95,28 @@ a.scribble-underline:hover,
     color: var(--graphite) !important;
     font-family: 'Fraunces', serif;
     font-size: 0.95rem;
+    transition: background-color .2s ease, color .2s ease, transform .2s ease;
 }
-.bouton { background: none !important; }
+.navbar .navbar-item.bouton { background: none !important; }
+.navbar .navbar-item.bouton:hover,
+.navbar .navbar-item.bouton:focus-visible {
+    background-color: var(--paper-card) !important;
+    color: var(--graphite) !important;
+    transform: translateY(-1px);
+}
+.navbar .navbar-item.bouton:focus-visible {
+    outline: 2px solid var(--pencil-blue);
+    outline-offset: -2px;
+}
 .portfolio-burger {
     color: var(--graphite);
     height: 3.25rem;
     margin-left: auto;
     width: 3.25rem;
+    transition: background-color .2s ease, color .2s ease;
 }
+.portfolio-burger:hover,
+.portfolio-burger:focus-visible { background-color: var(--paper-card); }
 .portfolio-burger span {
     background-color: var(--graphite);
     height: 2px;
@@ -114,8 +128,18 @@ a.scribble-underline:hover,
     border-radius: 2px;
     font-family: 'Inter', sans-serif;
     font-weight: 600;
+    transition: background-color .2s ease, color .2s ease, transform .2s ease;
 }
-.navbar-end .button:hover { background: var(--pencil-blue) !important; }
+.navbar-end .button:hover,
+.navbar-end .button:focus-visible {
+    background: transparent !important;
+    color: var(--graphite) !important;
+    transform: translateY(-2px) rotate(-0.5deg);
+}
+.navbar-end .button:focus-visible {
+    outline: 2px solid var(--pencil-blue);
+    outline-offset: 3px;
+}
 @media (max-width: 1023px) {
     .navbar-menu {
         background:
@@ -355,6 +379,13 @@ a.scribble-underline:hover,
     color: var(--paper);
     transform: translateY(-2px) rotate(-0.35deg);
 }
+.search-link--primary:hover,
+.search-link--primary:focus-visible {
+    background: transparent;
+    border-color: var(--graphite);
+    color: var(--graphite);
+    transform: translateY(-2px) rotate(-0.5deg);
+}
 .search-link:focus-visible {
     outline: 2px solid var(--mark-red);
     outline-offset: 3px;
@@ -493,10 +524,15 @@ a.scribble-underline:hover,
     height: 2.25rem;
     justify-content: center;
     width: 2.25rem;
+    text-decoration: none !important;
+    transition: background-color .2s ease, color .2s ease, transform .2s ease;
 }
-.passion-controls .button:hover {
+.passion-controls .button:hover,
+.passion-controls .button:focus-visible {
     background: var(--graphite) !important;
     color: var(--paper) !important;
+    text-decoration: none !important;
+    transform: translateY(-1px);
 }
 #slider-content {
     min-height: 275px;
@@ -932,11 +968,18 @@ a.scribble-underline:hover,
     min-height: 2.45rem;
     padding-left: 0.8rem;
     padding-right: 0.8rem;
+    transition: background-color .2s ease, color .2s ease, transform .2s ease;
     width: 100%;
 }
-#projets .card-content a.button:hover {
+#projets .card-content a.button:hover,
+#projets .card-content a.button:focus-visible {
     background: var(--graphite) !important;
     color: var(--paper) !important;
+    transform: translateY(-1px);
+}
+#projets .card-content a.button:focus-visible {
+    outline: 2px solid var(--pencil-blue);
+    outline-offset: 3px;
 }
 .closing-doodle {
     margin: 2.75rem auto 0;
@@ -965,6 +1008,7 @@ a.scribble-underline:hover,
     left: 50%;
     max-height: calc(100vh - 2rem);
     opacity: 0;
+    overscroll-behavior: contain;
     overflow-y: auto;
     pointer-events: none;
     position: fixed;
@@ -985,6 +1029,12 @@ a.scribble-underline:hover,
 .drawer-open,
 .lightbox-open {
     overflow: hidden;
+}
+body.scroll-locked {
+    left: 0;
+    position: fixed;
+    right: 0;
+    width: 100%;
 }
 .drawer-tape {
     background: rgba(63,90,138,0.26);
@@ -1013,10 +1063,11 @@ a.scribble-underline:hover,
     width: 2.45rem;
     z-index: 2;
 }
-.drawer-close:hover {
+.drawer-close:hover,
+.drawer-close:focus-visible {
     background: transparent;
     color: var(--graphite);
-    transform: rotate(4deg);
+    transform: translateY(-2px) rotate(-0.5deg);
 }
 .drawer-header {
     border-bottom: 1.5px solid var(--graphite);
