@@ -206,6 +206,15 @@ a.scribble-underline:hover,
     outline: 2px solid var(--pencil-blue);
     outline-offset: 3px;
 }
+.hero-cta--secondary {
+    background: transparent;
+    color: var(--graphite);
+}
+.hero-cta--secondary:hover,
+.hero-cta--secondary:focus-visible {
+    background: var(--graphite);
+    color: var(--paper);
+}
 
 /* Photo "polaroid" */
 .polaroid {
@@ -551,18 +560,6 @@ a.scribble-underline:hover,
     font-size: 1.6rem !important;
     margin-bottom: 0.4rem;
 }
-.passion-link {
-    align-items: center;
-    color: var(--graphite);
-    display: inline-flex;
-    flex-direction: column;
-    gap: 0.65rem;
-    text-decoration: none;
-}
-.passion-link--icon {
-    margin-top: 1.6rem;
-}
-.passion-link:hover .passion-action,
 .moment-pick:hover .passion-action,
 .moment-pick:focus-visible .passion-action {
     background: var(--graphite);
@@ -648,6 +645,18 @@ a.scribble-underline:hover,
 .moment-pick--film .moment-art i {
     color: var(--pencil-blue);
 }
+.moment-pick--game .moment-art {
+    aspect-ratio: 376 / 531;
+    background:
+        linear-gradient(135deg, rgba(86,107,95,0.2), transparent 60%),
+        #e7e2d5;
+}
+.moment-pick--game .moment-art img {
+    object-fit: contain;
+}
+.moment-pick--game .moment-art i {
+    color: var(--moss);
+}
 .moment-copy {
     display: grid;
     gap: 0.25rem;
@@ -682,51 +691,6 @@ a.scribble-underline:hover,
     justify-self: start;
     margin-top: 0.3rem;
 }
-.sketch-preview {
-    display: grid;
-    gap: 0.35rem;
-    grid-template-columns: repeat(2, 4.2rem);
-    margin-top: 0.75rem;
-    position: relative;
-    transform: rotate(-1.5deg);
-    transition: transform .3s ease;
-}
-.passion-link:hover .sketch-preview {
-    transform: rotate(0deg) translateY(-2px);
-}
-.sketch-preview figure {
-    aspect-ratio: 1 / 1;
-    background: #fdfcfa;
-    border: 1.5px solid var(--graphite);
-    box-shadow: 4px 4px 0 rgba(63,90,138,0.14);
-    margin: 0;
-    overflow: hidden;
-    padding: 0.25rem;
-}
-.sketch-preview figure:nth-child(2),
-.sketch-preview figure:nth-child(3) {
-    transform: rotate(1.5deg);
-}
-.sketch-preview img {
-    display: block;
-    filter: grayscale(30%) contrast(1.04);
-    height: 100%;
-    object-fit: cover;
-    width: 100%;
-}
-.sketch-count {
-    background: var(--paper-card);
-    border: 1.5px solid var(--mark-red);
-    color: var(--mark-red);
-    font-family: 'Caveat', cursive;
-    font-size: 1.1rem;
-    line-height: 1;
-    padding: 0.35rem 0.55rem;
-    position: absolute;
-    right: -1.15rem;
-    top: -0.7rem;
-    transform: rotate(5deg);
-}
 .slide-image {
     background: #fdfcfa;
     border: 1.5px solid var(--graphite);
@@ -740,118 +704,6 @@ a.scribble-underline:hover,
 .slide-image:hover {
     filter: grayscale(0%);
     transform: rotate(0deg) translateY(-2px);
-}
-.drawings-modal .modal-background {
-    background: rgba(42,39,35,0.68);
-}
-.drawings-modal-card {
-    background:
-        linear-gradient(135deg, rgba(255,255,255,0.38), transparent 45%),
-        var(--paper-card);
-    border: 1.5px solid var(--graphite);
-    border-radius: 6px;
-    box-shadow: 12px 14px 0 rgba(42,39,35,0.16);
-    max-height: min(84vh, 760px);
-    overflow: hidden;
-    width: min(1080px, calc(100vw - 2rem));
-}
-.drawings-modal-head {
-    align-items: center;
-    border-bottom: 1.5px solid var(--graphite);
-    display: flex;
-    gap: 1rem;
-    justify-content: space-between;
-    padding: 1.25rem 1.4rem;
-    position: relative;
-}
-.drawings-modal-head::before {
-    background: rgba(63,90,138,0.26);
-    border: 1px solid rgba(63,90,138,0.34);
-    content: "";
-    height: 26px;
-    left: 50%;
-    position: absolute;
-    top: -14px;
-    transform: translateX(-50%) rotate(-2deg);
-    width: 92px;
-}
-.drawings-modal-head .modal-card-title {
-    color: var(--graphite);
-    font-family: 'Fraunces', serif;
-    font-size: 2rem;
-    line-height: 1;
-    margin: 0;
-}
-.drawings-modal-head p:last-child {
-    margin-top: 0.35rem;
-}
-.drawings-close {
-    flex: 0 0 auto;
-    position: static;
-}
-.drawings-modal-body {
-    background: transparent;
-    max-height: calc(min(84vh, 760px) - 118px);
-    overflow-y: auto;
-    padding: 1.1rem;
-}
-.sketch-gallery {
-    column-count: 4;
-    column-gap: 0.9rem;
-}
-.sketch-card {
-    background: #fdfcfa;
-    border: 1px solid var(--graphite-soft);
-    break-inside: avoid;
-    box-shadow: 4px 4px 0 rgba(42,39,35,0.08);
-    display: inline-block;
-    margin: 0 0 0.9rem;
-    padding: 0.45rem 0.45rem 0.7rem;
-    transform: rotate(-0.25deg);
-    width: 100%;
-}
-.sketch-card:nth-child(2n) { transform: rotate(0.35deg); }
-.sketch-card:nth-child(3n) { transform: rotate(-0.55deg); }
-.sketch-card img {
-    background:
-        linear-gradient(135deg, rgba(63,90,138,0.08), transparent 42%),
-        repeating-linear-gradient(0deg, rgba(42,39,35,0.04) 0 1px, transparent 1px 9px),
-        #fdfcfa;
-    display: block;
-    filter: grayscale(18%) contrast(1.03);
-    height: auto;
-    width: 100%;
-}
-.sketch-card-button {
-    background:
-        linear-gradient(135deg, rgba(63,90,138,0.08), transparent 42%),
-        #fdfcfa;
-    border: 0;
-    cursor: zoom-in;
-    display: block;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-}
-.sketch-card-button img {
-    transition: filter .2s ease, transform .2s ease;
-}
-.sketch-card-button:hover img,
-.sketch-card-button:focus-visible img {
-    filter: grayscale(0%) contrast(1.04);
-    transform: scale(1.015);
-}
-.sketch-card-button:focus-visible {
-    outline: 2px solid var(--pencil-blue);
-    outline-offset: 3px;
-}
-.sketch-card figcaption {
-    color: var(--pencil-blue);
-    font-family: 'Caveat', cursive;
-    font-size: 1.08rem;
-    line-height: 1;
-    margin-top: 0.45rem;
-    text-align: center;
 }
 .dot {
     border: 1px solid var(--graphite);
@@ -1131,7 +983,6 @@ a.scribble-underline:hover,
     visibility: visible;
 }
 .drawer-open,
-.modal-open,
 .lightbox-open {
     overflow: hidden;
 }
@@ -1298,7 +1149,20 @@ a.scribble-underline:hover,
     margin: 0;
     padding: 0.45rem;
 }
+.drawer-media figcaption {
+    color: var(--graphite-soft);
+    font-size: 0.78rem;
+    line-height: 1.35;
+    padding: 0.45rem 0.2rem 0.1rem;
+}
+.drawer-section > p {
+    color: var(--graphite-soft);
+    line-height: 1.5;
+    margin: 0;
+}
 .drawer-media {
+    display: flex;
+    flex-direction: column;
     transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease;
 }
 .drawer-media:hover {
@@ -1307,16 +1171,23 @@ a.scribble-underline:hover,
     transform: translateY(-2px);
 }
 .drawer-media-button {
+    align-items: center;
+    aspect-ratio: 16 / 10;
     background: transparent;
     border: 0;
     cursor: zoom-in;
-    display: block;
+    display: flex;
+    justify-content: center;
     margin: 0;
+    overflow: hidden;
     padding: 0;
     width: 100%;
 }
-.drawer-media-button img {
+#drawer .drawer-media-button img {
+    height: 100%;
+    object-fit: contain;
     transition: filter .2s ease, transform .2s ease;
+    width: 100%;
 }
 .drawer-media-button:hover img,
 .drawer-media-button:focus-visible img {
@@ -1379,9 +1250,6 @@ a.scribble-underline:hover,
     transition: opacity .26s ease, visibility 0s linear .26s;
     visibility: hidden;
     z-index: 1001;
-}
-.drawings-lightbox {
-    z-index: 1102;
 }
 .project-lightbox.is-open {
     opacity: 1;
@@ -1555,9 +1423,6 @@ a.scribble-underline:hover,
     .drawer-gallery {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
-    .sketch-gallery {
-        column-count: 3;
-    }
 }
 
 @media (max-width: 640px) {
@@ -1641,21 +1506,6 @@ a.scribble-underline:hover,
     .drawer-gallery {
         grid-template-columns: 1fr;
     }
-    .drawings-modal-card {
-        max-height: 88vh;
-        width: calc(100vw - 1rem);
-    }
-    .drawings-modal-head {
-        align-items: flex-start;
-        padding: 1rem;
-    }
-    .drawings-modal-head .modal-card-title {
-        font-size: 1.65rem;
-    }
-    .drawings-modal-body {
-        max-height: calc(88vh - 116px);
-        padding: 0.75rem;
-    }
     #slider-content {
         min-height: 315px;
     }
@@ -1669,13 +1519,6 @@ a.scribble-underline:hover,
     }
     .moment-note {
         font-size: 0.82rem;
-    }
-    .sketch-gallery {
-        column-count: 2;
-        column-gap: 0.65rem;
-    }
-    .sketch-card {
-        margin-bottom: 0.65rem;
     }
     .project-lightbox {
         align-content: center;
@@ -1755,6 +1598,65 @@ a.scribble-underline:hover,
     display: grid;
     gap: 1.15rem;
     grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.skill-examples {
+    align-items: center;
+    background: var(--paper-alt);
+    border: 1.5px dashed var(--graphite-soft);
+    display: grid;
+    gap: 1.4rem;
+    grid-template-columns: minmax(220px, 0.8fr) minmax(0, 1.2fr);
+    margin-top: 1.5rem;
+    padding: 1.25rem;
+}
+.skill-examples h3 {
+    font-size: 1.55rem;
+    line-height: 1.12;
+    margin: 0.2rem 0 0.5rem;
+}
+.skill-examples p:last-child {
+    margin: 0;
+    max-width: 42ch;
+}
+.skill-example-links {
+    display: grid;
+    gap: 0.55rem;
+}
+.skill-example-link {
+    align-items: center;
+    background: var(--paper-card);
+    border: 1px solid rgba(42,39,35,0.34);
+    color: var(--graphite);
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+    padding: 0.75rem 0.9rem;
+    text-decoration: none;
+    transition: border-color .2s ease, transform .2s ease;
+}
+.skill-example-link:hover,
+.skill-example-link:focus-visible {
+    border-color: var(--pencil-blue);
+    color: var(--graphite);
+    transform: translateX(3px);
+}
+.skill-example-link:focus-visible {
+    outline: 2px solid var(--pencil-blue);
+    outline-offset: 2px;
+}
+.skill-example-link span {
+    display: grid;
+    gap: 0.15rem;
+}
+.skill-example-link strong {
+    color: var(--graphite);
+}
+.skill-example-link small {
+    color: var(--graphite-soft);
+}
+.skill-example-link > i {
+    color: var(--pencil-blue);
+    flex: 0 0 auto;
 }
 .tool-panel,
 .skills-method,
@@ -1952,7 +1854,8 @@ a.scribble-underline:hover,
 
 @media (max-width: 980px) {
     .skills-heading,
-    .skills-board {
+    .skills-board,
+    .skill-examples {
         grid-template-columns: 1fr;
     }
     .skills-heading p:last-child {
@@ -2002,7 +1905,6 @@ a.scribble-underline:hover,
     .project-lightbox { transition: none; }
     .drawer-media,
     .drawer-media-button img,
-    .sketch-card-button img,
     .hero-cta,
     .moment-art,
     .project-final-link,
